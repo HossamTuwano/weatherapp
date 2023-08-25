@@ -18,6 +18,13 @@
   <main class="container mx-auto max-w-4xl mt-4">
     <!-- search bar -->
     <div class="mx-2 md:mx-0">
+
+      <div class="mb-4">
+        <div class="font-bold">Convert Temperature</div>
+        <button onclick="toCelsius()" class="to-celsius cborder-none bg-[#85a9e6] text-white rounded-sm py-3 px-2 text-sm">To Celsius</button>
+        <button onclick="toFahrenheit()" class="to-fahrenheit cborder-none bg-[#85a9e6] text-white rounded-sm py-3 px-2 text-sm">To toFahreinheit</button>
+      </div>
+
       <section class="mb-4">
         <form action="" class="bg-white flex items-center px-2 h-14 space-x-2">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -25,6 +32,10 @@
           <button class="search-btn border-none h-10 bg-[#000] px-4"><span class="text-[#fff] text-sm">Search</span></button>
         </form>
       </section>
+
+
+
+
 
       <section class="mb-4">
 
@@ -35,7 +46,7 @@
               <i class="fa-solid fa-cloud-sun text-2xl"></i>
             </div>
             <div class="flex">
-              <span class="text-5xl font-bold">29</span>
+              <span class="showFahrenheit text-5xl font-bold">29</span>
               <span class="toCentigrade">&deg;C</span>
               <span class="toFahreinheit">|&deg;F</span>
             </div>

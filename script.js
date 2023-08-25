@@ -2,20 +2,24 @@ const cityInput = document.querySelector(".city-input");
 const searchButton = document.querySelector(".search-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const weatherCardsDiv = document.querySelector(".weather-cards");
-const tempDivCentigrade = document.querySelector(".toCentigrade");
-const tempDivFahreinheit = document.querySelector(".toFahreinheit");
+const tempDivCentigrade = document.querySelector(".to-celsius");
+const tempDivFahreinheit = document.querySelector(".to-fahrenheit");
+const showCelsius = document.querySelector(".showCelsius");
+const showFahrenheit = document.querySelector(".showFahrenheit");
 
 const API_KEY = "79b24de2f2b2a7584eab726b875298fb";
 
 // converting temperature degrees
 
-tempDivCentigrade.addEventListener("click", (celsius) => {
-  var fahrenheit = (celsius * 9) / 5 + 32;
-  console.log(fahrenheit);
-});
+const getCelcius = localStorage.getItem("celsius");
+
+function toCelsius(celsius) {
+  return celsius;
+}
 
 function createWeatherCard(cityName, weatherItem, index) {
   const timestamp = weatherItem.dt;
+  localStorage.setItem("timestamp", timestamp);
   const date = new Date(timestamp * 1000);
   const dayAbbreviation = date.toLocaleString("en-US", { weekday: "short" });
 
@@ -26,6 +30,8 @@ function createWeatherCard(cityName, weatherItem, index) {
 
   const temp = (weatherItem.main.temp - 273.5).toFixed(0);
 
+  localStorage.setItem("celcius", temp);
+
   if (index === 0) {
     return `
       <div class="flex justify-between">
@@ -34,9 +40,9 @@ function createWeatherCard(cityName, weatherItem, index) {
         <img src='https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png' alt="">
       </div>
       <div class="flex">
-        <span class="text-5xl font-bold">${temp}</span>
-        <span>&deg;C</span>
-        <span>|&deg;F</span>
+        <span class="showFahrenheit text-5xl font-bold">${temp}</span>
+        <span class=''>&deg;C</span>
+        <span class=''>|&deg;F</span>
       </div>
       <div class="text-[#d9d9d9] text-sm">
         <div class="">Humidity:${weatherItem.main.humidity} </div>
@@ -70,7 +76,6 @@ function getWeatherDetails(cityName, lat, lon) {
   fetch(WEATHER_API_URL)
     .then((res) => res.json())
     .then((data) => {
-      console.log(cityName);
       const uniqueForecastDays = [];
       const fiveDaysForecast = data.list.filter((forecast) => {
         const forecastDate = new Date(forecast.dt_txt).getDate();
@@ -83,7 +88,6 @@ function getWeatherDetails(cityName, lat, lon) {
       weatherCardsDiv.innerHTML = "";
       fiveDaysForecast.forEach((weatherItem, index) => {
         if (index === 0) {
-          console.log(weatherItem);
           weatherCardsDiv.insertAdjacentHTML(
             "beforebegin",
             createWeatherCard(cityName, weatherItem, index)
@@ -123,6 +127,17 @@ const getCityCoordinates = (evt) => {
   console.log(cityName);
 };
 
+function toFahrenheit() {
+  let fahrenheit = (getCelcius * 9) / 5 + 32;
+  localStorage.setItem("storedFahrenheit", fahrenheit);
+  // showFahrenheit.innerHTML = localStorage
+  //   .getItem("storedFahrenheit")
+  //   .toString();
+  showFahrenheit.innerHTML = "this";
+  // showFahrenheit.textContent(fahrenheit.toString);
+  const timestamp = localStorage.getItem("timestamp");
+  createWeatherCard(timestamp);
+}
 searchButton.addEventListener("click", getCityCoordinates);
 
 // google.charts.load("current", { packages: ["line"] });
