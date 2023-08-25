@@ -1,0 +1,17 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: no-repeat center url("images/bg-1.jpg");
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Open+Sans:wght@300&family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="dist/output.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/13cf8a12e4.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>Weather App</title>
+</head>
+
+<body>
+  <main class="container mx-auto max-w-4xl mt-4">
+    <!-- search bar -->
+    <div class="mx-2 md:mx-0">
+      <section class="mb-4">
+        <form action="" class="bg-white flex items-center px-2 h-14 space-x-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="basis-11/12"><input class="city-input w-full h-10 border-none outline-none" type="text" placeholder="Search Location"></div>
+          <button class="search-btn border-none h-10 bg-[#000] px-4"><span class="text-[#fff] text-sm">Search</span></button>
+        </form>
+      </section>
+
+      <section class="mb-4">
+
+        <div class="current-weather flex justify-between">
+          <div class="flex gap-1 align-top">
+            <div>
+              <!-- <img src="" alt=""> -->
+              <i class="fa-solid fa-cloud-sun text-2xl"></i>
+            </div>
+            <div class="flex">
+              <span class="text-5xl font-bold">29</span>
+              <span class="toCentigrade">&deg;C</span>
+              <span class="toFahreinheit">|&deg;F</span>
+            </div>
+            <div class="text-[#d9d9d9] text-sm">
+              <div class="">Humidity: </div>
+              <div>wind speed:</div>
+            </div>
+
+          </div>
+
+          <div class="text-right text-[#d9d9d9] text-sm">
+            <div class="text-[#000] font-bold">Weather</div>
+            <div>Firday 14:00</div>
+            <div>Partly Cloud</div>
+          </div>
+        </div>
+
+
+        <!-- chart -->
+        <div class="">
+          <div class="mb-4" id="linechart_material"></div>
+        </div>
+
+
+        <!-- five days forecast -->
+        <div class="flex justify-between weather-cards">
+          <div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
+            <div class="text-center text-sm md:text-2xl">Sat</div>
+            <div>
+              <!-- icon -->
+              <i class="fa-solid fa-cloud-sun text-4xl md:text-7xl"></i>
+            </div>
+            <div class="flex justify-between space-x-2 text-sm">
+              <span>29&deg;</span>
+              <span>19&deg;</span>
+            </div>
+          </div>
+          <div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
+            <div class="text-center text-sm md:text-2xl">Sat</div>
+            <div>
+              <!-- icon -->
+              <i class="fa-solid fa-cloud-sun text-4xl md:text-7xl"></i>
+            </div>
+            <div class="flex justify-between space-x-2 text-sm">
+              <span>29&deg;</span>
+              <span>19&deg;</span>
+            </div>
+          </div>
+          <div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
+            <div class="text-center text-sm md:text-2xl">Sat</div>
+            <div>
+              <!-- icon -->
+              <i class="fa-solid fa-cloud-sun text-4xl md:text-7xl"></i>
+            </div>
+            <div class="flex justify-between space-x-2 text-sm">
+              <span>29&deg;</span>
+              <span>19&deg;</span>
+            </div>
+          </div>
+          <div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
+            <div class="text-center text-sm md:text-2xl">Sat</div>
+            <div>
+              <!-- icon -->
+              <i class="fa-solid fa-cloud-sun text-4xl md:text-7xl"></i>
+            </div>
+            <div class="flex justify-between space-x-2 text-sm">
+              <span>29&deg;</span>
+              <span>19&deg;</span>
+            </div>
+          </div>
+          <div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
+            <div class="text-center text-sm md:text-2xl">Sat</div>
+            <div>
+              <!-- icon -->
+              <i class="fa-solid fa-cloud-sun text-4xl md:text-7xl"></i>
+            </div>
+            <div class="flex justify-between space-x-2 text-sm">
+              <span>29&deg;</span>
+              <span>19&deg;</span>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+  <script src="script.js"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+
+</html>
