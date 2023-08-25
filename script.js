@@ -31,7 +31,7 @@ function createWeatherCard(cityName, weatherItem, index) {
       <div class="flex justify-between">
       <div class="flex gap-1 align-top">
       <div>
-        <img src='httpss://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png' alt="">
+        <img src='https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png' alt="">
       </div>
       <div class="flex">
         <span class="text-5xl font-bold">${temp}</span>
