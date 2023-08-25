@@ -54,7 +54,7 @@ function createWeatherCard(cityName, weatherItem, index) {
     return `<div class="flex flex-col md:justify-between bg-[#f8f9fa] px-2 items-center rounded-lg md:w-[170px] md:h-[170px] md:py-2">
     <div class="text-center text-sm md:text-2xl">${dayAbbreviation}</div>
     <div>
-    <img src='httpss://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png' alt="">
+    <img src='https://openweathermap.org/img/wn/${weatherItem.weather[0].icon}@2x.png' alt="">
     </div>
     <div class="flex justify-between space-x-2 text-sm">
       <span>${temp}&deg;</span>
